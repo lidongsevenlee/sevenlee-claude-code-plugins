@@ -1,0 +1,43 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sevenlee-claude-code-plugins",
+  "version": "1.0.0",
+  "description": "Claude Code marketplace providing some awsome plugins. Product by sevenlee",
+  "owner": {
+    "name": "lidongsevenlee",
+    "email": "lidongsevenlee@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "mpx-lsp",
+      "version": "0.1.0",
+      "source": "./mpx-lsp",
+      "description": "Mpx language server integration (using @mpxjs/language-server)",
+      "category": "development",
+      "tags": [
+        "mpx",
+        "lsp",
+        "language-server"
+      ],
+      "author": {
+        "name": "lidongsevenlee",
+        "email": "lidongsevenlee@gmail.com"
+      },
+      "lspServers": {
+        "typescript": {
+          "command": "mpx-language-server",
+          "args": [
+            "--stdio"
+          ],
+          "transport": "stdio",
+          "extensionToLanguage": {
+            ".mpx": "mpx"
+          },
+          "initializationOptions": {},
+          "settings": {},
+          "maxRestarts": 3
+        }
+      }
+    }
+  ]
+}

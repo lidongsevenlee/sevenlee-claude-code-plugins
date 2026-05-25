@@ -1,0 +1,12 @@
+{
+  "name": "mpx-lsp",
+  "description": "Mpx.js language server integration(Mpx)",
+  "version": "0.1.0",
+  "author": {
+    "name": "lidongsevenlee",
+    "email": "lidongsevenlee@gmail.com"
+  },
+  "repository": "https://github.com/mpx-ecology/language-tools",
+  "license": "MIT",
+  "keywords": ["mpx", "lsp", "language-server"]
+}

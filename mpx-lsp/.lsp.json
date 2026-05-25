@@ -1,0 +1,13 @@
+{
+    "mpx": {
+        "command": "mpx-language-server",
+        "args": ["--stdio"],
+        "extensionToLanguage": {
+            ".mpx": "mpx"
+        },
+        "transport": "stdio",
+        "initializationOptions": {},
+        "settings": {},
+        "maxRestarts": 3
+    }
+}

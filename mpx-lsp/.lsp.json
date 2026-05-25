@@ -6,7 +6,7 @@
             ".mpx": "mpx"
         },
         "transport": "stdio",
-        "initializationOptions": {},
+        "initializationOptions": { "agent": true },
         "settings": {},
         "maxRestarts": 3
     }

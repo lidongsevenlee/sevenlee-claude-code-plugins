@@ -33,7 +33,7 @@
           "extensionToLanguage": {
             ".mpx": "mpx"
           },
-          "initializationOptions": {},
+          "initializationOptions": { "agent": true },
           "settings": {},
           "maxRestarts": 3
         }

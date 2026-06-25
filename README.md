@@ -10,11 +10,24 @@ A collection of Claude Code plugins providing language server integrations and d
 
 ## Installation
 
-Install them the usual way.  First make CC aware of the marketplace:
+Install the required language server before installing the Claude Code plugin:
+
+```bash
+npm install -g @mpxjs/language-server
+which mpx-language-server
+```
+
+The `mpx-lsp` plugin starts the `mpx-language-server` executable from your
+`PATH`, so the second command must print a path. If it does not, make sure your
+npm global binary directory is included in `PATH`.
+
+Then make Claude Code aware of this marketplace:
+
 1. Run `claude`
 2. `/plugin marketplace add https://github.com/lidongsevenlee/sevenlee-claude-code-plugins`
 
-Then enable the plugins of your choice:
+Enable the plugins of your choice:
+
 1. Run `claude`
 2. Type `/plugins`
 3. Tab to `Marketplaces`
@@ -22,6 +35,9 @@ Then enable the plugins of your choice:
 5. Select the plugins you'd like with the spacebar (e.g. mpx-lsp)
 6. Press "i" to install them
 7. Restart Claude Code
+
+After restarting, open a project that contains `.mpx` files. Claude Code should
+start `mpx-language-server` automatically for those files.
 
 ## mpx-lsp
 
@@ -36,12 +52,16 @@ Provides intelligent language features for [Mpx.js](https://github.com/didi/mpx)
 
 ### Requirements
 
-- `mpx-language-server` installed and available in PATH
-- TypeScript available in `node_modules/typescript/lib`
+- `@mpxjs/language-server` installed globally, which provides the
+  `mpx-language-server` command
+- `mpx-language-server` available in `PATH`
+- TypeScript available in your project at `node_modules/typescript/lib`
 
-### Configuration
+### Plugin Configuration Reference
 
-Default settings in `.lsp.json`:
+The following configuration is bundled inside the `mpx-lsp` plugin. Users do
+not need to create or copy this file during installation; it is shown here only
+for maintainers and troubleshooting.
 
 ```json
 {
@@ -54,6 +74,16 @@ Default settings in `.lsp.json`:
   }
 }
 ```
+
+### Troubleshooting
+
+- `mpx-language-server: command not found`: install
+  `@mpxjs/language-server` globally and verify `which mpx-language-server`
+  prints a path.
+- The plugin is installed but `.mpx` files do not get language features:
+  restart Claude Code and reopen the project.
+- TypeScript-related errors: run `npm install` in the Mpx project so local
+  dependencies, including TypeScript, are available.
 
 ## Contributing
 
